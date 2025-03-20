@@ -1,0 +1,36 @@
+# File temporanei di Neovim
+swap/
+*.swp
+*.swo
+*.swn
+
+# File di backup
+backup/
+*.bak
+*.tmp
+
+# File di undo
+undo/
+*.un~
+
+# Plug-in gestiti da un package manager (se usi lazy.nvim o packer)
+plugged/
+site/
+pack/
+lazy-lock.json
+
+# File compilati (se hai roba in C o Lua che compila)
+*.o
+*.so
+*.dll
+
+# Cache di Neovim
+.cache/
+session/
+sessions/
+
+# File Python se usi pynvim
+__pycache__/
+*.pyc
+*.pyo
+
