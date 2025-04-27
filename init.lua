@@ -31,3 +31,6 @@ vim.api.nvim_set_option("clipboard", "unnamedplus")
 
 -- Visual Block
 vim.opt.virtualedit = "all"
+
+-- Set Numbers
+vim.opt.number = true
