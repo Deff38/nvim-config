@@ -21,37 +21,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = {
-  -- catppuccin
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  -- init.lua:
-    {
-    'nvim-telescope/telescope.nvim', tag = '0.1.8',
-      dependencies = { 'nvim-lua/plenary.nvim' }
-    },
-  -- treesitter
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
-}
-
 local opts = {}
 
-
 -- Setup lazy.nvim
-require("lazy").setup(plugins, opts)
+require("lazy").setup("plugins")
 
--- Treesitter
-local configs = require("nvim-treesitter.configs")
-configs.setup({
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
-          highlight = { enable = true },
-          indent = { enable = true },  
-        })
+-- Clipboard
+vim.api.nvim_set_option("clipboard", "unnamedplus")
 
--- Telescope
-local builtin = require("telescope.builtin")
-vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-
--- Catppuccin
-require("catppuccin").setup()
-vim.cmd.colorscheme "catppuccin"
+-- Visual Block
+vim.opt.virtualedit = "all"
