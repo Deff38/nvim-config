@@ -11,7 +11,7 @@ return {
   "williamboman/mason-lspconfig.nvim",
   config = function()
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls", "ts_ls" },
+      ensure_installed = { "lua_ls", "ts_ls", "rust_analyzer", "bashls", "chsarp_ls", "cssls", "harper_ls", "html", "jsonls", "hyprls", "java_language_server", "htmx", "ast-grep" },
     })
   end
   },
